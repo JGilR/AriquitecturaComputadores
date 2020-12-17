@@ -48,12 +48,40 @@ Al igual que en el ejercicio anterior, cada proceso genera sus dos buffers A y B
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
 
 ## Practica 3
+### *Ejercicio 1*
 
+Implementar un programa donde el nodo 0 inicializa una variable con un valor arbitrario, después él mismo lo modifica (por ejemplo calculando el cuadrado de su valor) y finalmente lo envía al resto de nodos del comunicador.
 
+* Hacer utilizando comunicación punto a punto.
+*  Hacer utilizando comunicación colectiva. 
+
+### *Ejercicio 2*
+
+Implementar un programa donde el nodo 0 inicializa un array unidimensional asignando a cada valor su índice. Este array es dividido en partes, donde cada una de ellas será mandada a un proceso/nodo diferente. Después de que cada nodo haya recibido su porción de datos, los actualiza sumando a cada valor su rank. Por último, cada proceso envía su porción modificada al proceso root. 
+
+`(Hacerlo para que el número de datos total (N) sea múltiplo del número de procesos).`
+
+### *Ejercicio 3*
+
+Implementar un programa donde cada proceso inicializa un array de una dimensión, asignando a todos los elementos el valor de su rank+1. Después el proceso 0 (root) ejecuta dos operaciones de reducción (suma y después producto) sobre los arrays de todos los procesos. 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
 
 ## Practica 4
+### *Ejercicio 1*
+
+Implementar un programa que realice la transposición de la matriz inicial motrada en la figura (parte izquierda):
+
+* Realizar el proceso en paralelo, distribuyendo la matriz entre 4 procesos.
+
+
+
+### *Ejercicio 2*
+
+Implementar un programa donde se resuelva el problema de la transposición de matrices cuadradas de dimensión arbitraria NxN (siendo N múltiplo del número de P de procesos). La matriz se dividirá entre P procesos (p<<N) que la inicializarán, de tal modo que cada elemento sea único (para ello usar la posición de la fila y la columna y el
+número de rank, como por ejemplo: 1000 * i + j + n/p * rank).
+
+Para ello, distribuir A y B por columnas (o filas), entre los procesos y haciendo uso de las operaciones colectivas que se consideren oportunas llevar a cabo el proceso de transposición. 
 
 
 
