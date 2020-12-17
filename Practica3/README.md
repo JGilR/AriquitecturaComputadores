@@ -67,7 +67,7 @@ int main(int argc, char *argv[]){
 >- En nuestro programa creamos un pequeño menu para selecionar si queremos realizar la com. punto a punto (0) o la com. colectiva (1). Según el *flag (1 o 0)* entraras en el *if* o en el *else*.
 >- En la com. punto a punto enviamos y recibimos el dato con las funciones *MPI_Comm_Send(), MPI_Comm_Recv()*.
 
-> ![Image of capture](https://raw.githubusercontent.com/JGilR/ComputerArchitecture/master/Practica3/Exit_ejercicio1.png)
+> ![Image of capture](https://raw.githubusercontent.com/JGilR/ComputerArchitecture/master/Practica3/Exit_ejercicio1-1.png)
 
 >- En la com. colectiva calculamos el cadrado del numero insertado y lo enviamos desde el proceso 0 al resto de procesos con *MPI_Bcast()*.
 
