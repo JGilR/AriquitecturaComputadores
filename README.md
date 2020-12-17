@@ -3,6 +3,7 @@
 ### *Ejercicio 1*
 
 Implementar un programa usando MPI, que imprima por salida estándar:
+
 `“Hola mundo, soy el proceso X de un total de Y.”`
 
 cuando el número total de tareas es Y=50 y X un rango de 0 a 49.
@@ -13,12 +14,14 @@ Calcular el speedup con respecto a la versión serie de este programa medida que
 
 Implementar un programa usando MPI, donde el proceso 0 toma un dato del usuario y lo envía al resto de nodos en anillo. Esto es, el proceso i recibe de i-1 y transmite el dato a i+1, hasta que el dato alcanza el último nodo: 
 
-
+![Image of capture](https://raw.githubusercontent.com/JGilR/ComputerArchitecture/main/Practica1/ac1.PNG)
 
 Asumir que el dato que se transmite es un entero y que el proceso cero lee el dato del usuario.
 * Modificar la implementación para el dato introducido por el usuario de tantas vueltas como éste indique en el anillo.
 * Que desventaja se aprecia en este tipo de comunicaciones punto a punto a medida que aumentan el numero de procesos requeridos. Razonar la respuesta.
 * Cómo podría mejorar el sistema y su implemenación. 
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
 
 ## Practica 2
 ### *Ejercicio 1*
@@ -42,11 +45,16 @@ Al igual que en el ejercicio anterior, cada proceso genera sus dos buffers A y B
 
 
 
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
+
 ## Practica 3
 
 
 
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
 
 ## Practica 4
 
 
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
