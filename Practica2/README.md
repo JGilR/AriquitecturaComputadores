@@ -43,7 +43,8 @@ int main(int argc, char *argv[]){
 ```
 
 > Solución:
->- 
+>- Hemos creado una variable *cont* y otra *limite* para asegurarnos de que cuando llega al limite el contador, el programa finaliza. 
+>- Para este ejercicio creamos un *do-while()* con la condición de que el contador no llegue al limite. En el proceso 0 copiamos un mensaje en el buffer y lo enviamos al proceso 1. El proceso 1 recibe el mensaje y lo vuelve a enviar al proceso 0. Asi el mensaje va rebotando hasta llegar al límite.
 
 > ![Image of capture](https://raw.githubusercontent.com/JGilR/ComputerArchitecture/master/Practica2/Exit_ejercicio1.png)
 
@@ -93,7 +94,10 @@ int main(int argc, char *argv[]){
 ```
 
 > Solución:
->- 
+>- En este ejercicio nos piden la misma comunicación punto a punto y terminan cuando los 2 procesos reciben un valor cualquiera de sus arrays.
+>- Asi lo primero es inicializar los arrays (*linea 75-77 y linea 83-85*).
+>- PROCESO 1: envía el array (a) y recibe el array (b). Luego imprime un valor cualquiera aleatorio del array (b).
+>- PROCESO 2: realiza lo mismo que el primer procesa hasta que imprime un valor cualquiera aleatorio del array (b).
 
 > ![Image of capture](https://raw.githubusercontent.com/JGilR/ComputerArchitecture/master/Practica2/Exit_ejercicio2.png)
 
