@@ -41,7 +41,8 @@ int main(int argc, char** argv){
 >- Creamos una barrera para sincronizar los procesos con *MPI_Barrier()* y calculamos el tiempo de ejecuccion de cada proceso al imprimir un mensaje con *MPI_Wtime()*.
 >- Por ultimos finalizamos el *mpi* con *MPI_Finalize()*.
 
-> ![Image of capture](https://raw.githubusercontent.com/JGilR/ComputerArchitecture/master/Practica1/Exit_ejercicio1.png)
+> ![Image of capture](https://raw.githubusercontent.com/JGilR/ComputerArchitecture/master/Practica1/Exit_ejercicio1.png) 
+> `Lo hemos realizado con 4 procesos, si no la salida queda muy larga.`
 
 ### *Ejercicio 2*
 
