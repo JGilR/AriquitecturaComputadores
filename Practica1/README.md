@@ -36,6 +36,12 @@ int main(int argc, char** argv){
 }
 ```
 
+> Solución:
+>- En nuestro progama primero inicializamos nuestro *mpi* con *MPI_Init()* y *MPI_Comm_rank(), MPI_Comm_size()*, indicando el *rank* que es el id de nuestro proceso y *nproc* que son los procesos totales. 
+>- Creamos una barrera para sincronizar los procesos con *MPI_Barrier()* y calculamos el tiempo de ejecuccion de cada proceso al imprimir un mensaje con *MPI_Wtime()*.
+>- Por ultimos finalizamos el *mpi* con *MPI_Finalize()*.
+
+> ![Image of capture](https://raw.githubusercontent.com/JGilR/ComputerArchitecture/master/Practica1/Exit_ejercicio1.png)
 
 ### *Ejercicio 2*
 
@@ -99,3 +105,12 @@ int main(int argc, char **argv){
     return 0;
 }
 ```
+
+> Solución:
+>- Primero inicializamos nuestro *mpi* con *MPI_Init()* y *MPI_Comm_rank(), MPI_Comm_size()*, indicando el *rank* que es el id de nuestro proceso y *nproc* que son los procesos totales. 
+>- Creamos una barrera para sincronizar los procesos con *MPI_Barrier()* y calculamos el tiempo de ejecuccion con *MPI_Wtime()*.
+>- Lo que nos pide este problema es enviar un dato que pedimos al usuario al resto de nodos del anillo. Para ello dentro del primer *if(rank==0)* enviamos el dato pedido al usuario con *MPI_Send()*.
+>- A continuación fuera de la condición, es decir, fuera del primer proceso, recibimos el dato con *MPI_Recv()*. 
+>- Después de recibir el dato, si no estamos en el último proceso seguimos enviando el dato al siguiente nodo, hasta llegar al último. Cuando llega al último calculamos el tiempo de ejecucción.
+
+> ![Image of capture](https://raw.githubusercontent.com/JGilR/ComputerArchitecture/master/Practica1/Exit_ejercicio2.png)
