@@ -74,7 +74,7 @@ Implementar un programa que realice la transposición de la matriz inicial motra
 
 * Realizar el proceso en paralelo, distribuyendo la matriz entre 4 procesos.
 
-
+![Image of capture](https://raw.githubusercontent.com/JGilR/ComputerArchitecture/master/ac3.PNG)
 
 ### *Ejercicio 2*
 
@@ -83,6 +83,6 @@ número de rank, como por ejemplo: 1000 * i + j + n/p * rank).
 
 Para ello, distribuir A y B por columnas (o filas), entre los procesos y haciendo uso de las operaciones colectivas que se consideren oportunas llevar a cabo el proceso de transposición. 
 
-
+![Image of capture](https://raw.githubusercontent.com/JGilR/ComputerArchitecture/master/ac3-1.PNG)
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
