@@ -14,7 +14,7 @@ Calcular el speedup con respecto a la versión serie de este programa medida que
 
 Implementar un programa usando MPI, donde el proceso 0 toma un dato del usuario y lo envía al resto de nodos en anillo. Esto es, el proceso i recibe de i-1 y transmite el dato a i+1, hasta que el dato alcanza el último nodo: 
 
-![Image of capture](https://raw.githubusercontent.com/JGilR/ComputerArchitecture/main/Practica1/ac1.PNG)
+![Image of capture](https://raw.githubusercontent.com/JGilR/ComputerArchitecture/master/Practica1/ac1.PNG)
 
 Asumir que el dato que se transmite es un entero y que el proceso cero lee el dato del usuario.
 * Modificar la implementación para el dato introducido por el usuario de tantas vueltas como éste indique en el anillo.
