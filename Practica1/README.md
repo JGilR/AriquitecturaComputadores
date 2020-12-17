@@ -42,6 +42,7 @@ int main(int argc, char** argv){
 >- Por ultimos finalizamos el *mpi* con *MPI_Finalize()*.
 
 > ![Image of capture](https://raw.githubusercontent.com/JGilR/ComputerArchitecture/master/Practica1/Exit_ejercicio1.png) 
+
 > `Lo hemos realizado con 4 procesos, si no la salida queda muy larga.`
 
 ### *Ejercicio 2*
