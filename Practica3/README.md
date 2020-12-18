@@ -128,7 +128,9 @@ int main(int argc, char **argv) {
 ```
 
 > Solución:
->- 
+>- Inicializamos nuestro array *globaldata[4]* asignando cada valor a su indice (*{0,1,2,3}*) con un simple *for*.
+>- Para dividir el array y poder enviar un elemento a cada proceso utilizamos la función *MPI_Scatter()* y le pasamos nuestro array inicial *&globaldata* y el elemento que almacenaremos en una variable *localdata*. 
+>- Una vez divididos los elementos realizamos la actualización pedida (*localdata = localdata + rank*), y cada proceso envía su modificación de nuevo al proceso 0 (*root*) con la función *MPI_Gather()*, asi nuestro array modificado será = {0,2,4,6}.
 
 > ![Image of capture](https://raw.githubusercontent.com/JGilR/ComputerArchitecture/master/Practica3/Exit_ejercicio2.png)
 
@@ -183,6 +185,9 @@ void printArray(int array[], int count){
 ```
 
 > Solución:
->- 
+>- En este ejercicio nos piden inicializar un array asignando a todos sus elementos el valor *rank + 1*, eso lo realizamos con un simple *for()*, y realizar dos operaciones de reduccion sobre los arrays. 
+>- Para aplicar esa reducción utilizamos *MPI_Reduce()* y le pasamos el parámetro *MPI_SUM* (para sumar) o *MPI_PROD* (para multiplicar). Con esto se realizaran las operaciones sobre los elementos de cada array. 
+>- Asi llegamos a los resultados, el array del proceso 0 son todo unos, el del proceso 1 son todo doses, el del proceso 2 son todo treses y el del proceso 3 son todo cuatros. Si sumamos cada elemento de cada uno de los arrays (*proc0[0]+proc1[0]+proc2[0]+proc3[0] = 1+2+3+4 = 10*) el array que contiene los resultados de la suma serán todo dieces.
+>- Pasará lo mismo con la multiplicación (*1x2x3x4 = 24*).
 
 > ![Image of capture](https://raw.githubusercontent.com/JGilR/ComputerArchitecture/master/Practica3/Exit_ejercicio3.png)
