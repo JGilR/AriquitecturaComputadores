@@ -79,6 +79,110 @@ Implementar un programa donde el nodo 0 inicializa un array unidimensional asign
 
 `(Hacerlo para que el número de datos total (N) sea múltiplo del número de procesos).`
 
+```c++
+#include <mpi.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char **argv) {
+    int size, rank;
+
+    MPI_Init(&argc, &argv);
+    MPI_Comm_size(MPI_COMM_WORLD, &size);
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+
+    int globaldata[4];
+    int localdata;
+
+    int i;
+    if (rank == 0) {
+
+        for (i=0; i<size; i++)
+            globaldata[i] = i;
+
+        printf("1. Processor %d has data: ", rank);
+        for (i=0; i<size; i++)
+            printf("%d ", globaldata[i]);
+        printf("\n");
+    }
+
+    MPI_Scatter(globaldata, 1, MPI_INT, &localdata, 1, MPI_INT, 0, MPI_COMM_WORLD);
+
+    printf("2. Processor %d has data %d\n", rank, localdata);
+    localdata = localdata + rank;
+    printf("3. Processor %d now has %d\n", rank, localdata);
+
+    MPI_Gather(&localdata, 1, MPI_INT, globaldata, 1, MPI_INT, 0, MPI_COMM_WORLD);
+
+    if (rank == 0) {
+        printf("4. Processor %d has data: ", rank);
+        for (i=0; i<size; i++)
+            printf("%d ", globaldata[i]);
+        printf("\n");
+    }
+
+
+    MPI_Finalize();
+    return 0;
+}
+```
+
+> Solución:
+>- 
+
+> ![Image of capture](https://raw.githubusercontent.com/JGilR/ComputerArchitecture/master/Practica3/Exit_ejercicio2.png)
+
 ### *Ejercicio 3*
 
 Implementar un programa donde cada proceso inicializa un array de una dimensión, asignando a todos los elementos el valor de su rank+1. Después el proceso 0 (root) ejecuta dos operaciones de reducción (suma y después producto) sobre los arrays de todos los procesos. 
+
+```c++
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <mpi.h>
+
+void printArray(int array[], int count);
+
+int main(int argc, char *argv[]){
+  int rank, size;
+  int suma[10];
+  int mult[10];
+  int array[10];
+
+  MPI_Init(&argc, &argv);
+  MPI_Comm_size(MPI_COMM_WORLD, &size);
+  MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+  
+  for(int i = 0; i < 10; i++){
+    array[i] = (int)rank+1;
+    //printf("%d ", array[i]);
+  }
+  //printf("\n");
+  
+  MPI_Reduce(array, suma, 10, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
+  MPI_Reduce(array, mult, 10, MPI_INT, MPI_PROD, 0, MPI_COMM_WORLD);
+  
+  if(rank == 0){
+    printf("MPI SUM:\n");
+    printArray(suma, 10);
+    printf("\n\nMPI MULT:\n");
+    printArray(mult, 10);
+    printf("\n");
+  }
+
+  MPI_Finalize();
+  return 0;
+}
+
+void printArray(int array[], int count){
+  for(int i = 0; i < count; i++){
+    printf("%d ", array[i]);
+  }
+}
+```
+
+> Solución:
+>- 
+
+> ![Image of capture](https://raw.githubusercontent.com/JGilR/ComputerArchitecture/master/Practica3/Exit_ejercicio3.png)
